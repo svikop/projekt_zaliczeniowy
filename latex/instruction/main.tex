@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pakiety językowe i kodowanie ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+
+% --- Pakiety graficzne i formatowanie ---
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{float}
+
+% Ustawienia marginesów
+\geometry{margin=2.5cm}
+
+% Ustawienia wyglądu linków
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=cyan,
+}
+
+% --- Tytuł i autor ---
+\title{Instrukcja instalacji Ubuntu na VirtualBox \\ \large Krok po kroku}
+\author{Sviatoslav Kopytin}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Wstęp}
+Niniejszy dokument zawiera szczegółową instrukcję konfiguracji środowiska wirtualnego za pomocą programu \textbf{Oracle VM VirtualBox} oraz instalacji systemu operacyjnego \textbf{Ubuntu}.
+
+\section{Wymagania wstępne}
+Zanim zaczniesz, upewnij się, że posiadasz:
+\begin{itemize}
+    \item Pobrany instalator VirtualBox ze strony \href{https://www.virtualbox.org}{virtualbox.org}.
+    \item Obraz ISO systemu Ubuntu (wersja Desktop) ze strony \href{https://ubuntu.com/download/desktop}{ubuntu.com}.
+    \begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr1.png}
+\end{figure}
+    \item Minimum 4GB pamięci RAM oraz 25GB wolnego miejsca na dysku.
+\end{itemize}
+
+\section{Konfiguracja Maszyny Wirtualnej}
+
+\subsection{Krok 1: Tworzenie nowej maszyny}
+Otwórz VirtualBox i kliknij przycisk \textbf{Nowa (New)}.
+
+
+\begin{enumerate}
+    \item Podaj nazwę maszyny (np. "Ubuntu\_24").
+    \item Wybierz folder, w którym maszyna ma zostać zapisana.
+    \item Wskaż pobrany wcześniej obraz ISO.
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr2.png}
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr3.png}
+\end{figure}
+
+\subsection{Krok 2: Przydzielenie zasobów}
+Dla płynnego działania zaleca się ustawienie:
+\begin{itemize}
+    \item \textbf{Procesor:} Minimum 2 rdzenie.
+    \item \textbf{Pamięć operacyjna (Base Memory):} Minimum 2048 MB (zalecane 4096 MB).
+    \item \textbf{Dysk (EFI):} Zaznacz "Enable EFI" (opcjonalnie, zależnie od wersji).
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr4.png}
+\end{figure}
+
+\section{Uruchamianie maszyny wirtualnej}
+Po uruchomieniu maszyny (przycisk \textbf{Start}), należy poczekać.
+Pierwsze uruchomienie maszyny może potrwać dosyć długo, więc należy poczekać.
+
+\begin{figure}[H]
+    \centering
+    ...Uruchamianie maszyny, poniżej jeden ze slajdów.
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr5.png}
+\end{figure}
+
+
+\section{Konfiguracja poinstalacyjna (opcjonalna)}
+Po zakończeniu instalacji warto zainstalować \textit{Guest Additions}, aby odblokować współdzielenie schowka i pełny ekran. W terminalu Ubuntu wykonaj:
+
+\begin{verbatim}
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+\end{verbatim}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Screenshots/scr6.png}
+\end{figure}
+
+
+
+\section{Podsumowanie}
+Twoja maszyna wirtualna jest gotowa do pracy. Możesz teraz bezpiecznie testować oprogramowanie wewnątrz odizolowanego systemu.
+:)
+
+\end{document}

@@ -1,0 +1,30 @@
+\documentclass[a4paper, 12pt]{article}
+% --- PAKIETY ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{beramono}
+\usepackage{tabularx} % Do lepszych tabel
+
+% --- PAKIETY DO OKIENEK TERMINALA I KODU ---
+\usepackage{minted} % Do kolorowania składni (wymaga -shell-escape)
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{minted,breakable} % Załadowanie bibliotek tcolorbox
+
+% --- USTAWIENIA STRONY ---
+\geometry{a4paper, left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\definecolor{titlebg}{HTML}{4A90E2}
+\definecolor{terminalbg}{HTML}{2D2D2D} % Ciemnoszary dla tła terminala
+
+
+ \input{parts/lab3.tex}
+ \input{parts/lab4.tex}
+ \input{parts/lab5.tex}
+ \input{parts/lab6.tex}
+
+ \end{document}
